@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: "mysql://root:nMoJaHAKriixjJUcJbygErvxXFxLQJdS@yamabiko.proxy.rlwy.net:29349/railway", // ou l’URL de ton backend NestJS
+    baseURL: "https://nestjs-login-registration-profile-production.up.railway.app",
+    // baseURL: "http://localhost:3000"
 });
 
 export const register = (data) => API.post('/auth/register', data);
