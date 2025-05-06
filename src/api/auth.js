@@ -6,5 +6,9 @@ const API = axios.create({
     withCredentials: true,
 });
 
-export const register = (data) => {API.post('/auth/register', data) };
-export const login = (data) => API.post('/auth/login', data);
+export const register = (data) => {
+  console.log("Sending data to backend:", data);  // Log les données envoyées
+  return API.post('/auth/register', data)
+    .then(response => console.log("Response from backend:", response))
+    .catch(error => console.error("Error sending request:", error));
+};export const login = (data) => API.post('/auth/login', data);
